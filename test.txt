@@ -1,0 +1,15 @@
+한글은 맑은 고딕체 설정 : ctrl + , 설정 바로가기, 맑은 고딕체 Malgun Gothic
+창닫기 : ctrl + f4
+명령팔레트 : 특정 기능 메뉴를 빨리 찾아 실행하기 ctrl+shift+p
+
+git 기본 명령어 --복습--
+git init
+git add
+git commit
+git remote add
+git push
+원격 저장소 front_end 만드세요
+--
+
+SCM에서 파일 옆에 U : unstaging -> + 버튼 클릭 -> A : add,staging 
+-> 메시지 입력 ctrl+ enter 는 커밋 : M
