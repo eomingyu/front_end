@@ -10,6 +10,8 @@ git remote add
 git push
 원격 저장소 front_end 만드세요
 --
-
+vs code에서 git 설정 : SCM (ctrl+shift+g)
 SCM에서 파일 옆에 U : unstaging -> + 버튼 클릭 -> A : add,staging 
 -> 메시지 입력 ctrl+ enter 는 커밋 : M
+->메뉴에서 push -> remote 저장소 설정 안되어 있으면 명령팔레트에 표시 url 입력,이름 origin 입력
+-> 터미널에서 git remote -v 확인 -> master 브랜치 확인 -> push

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 이미지의 크기 확인합시다. 파일 탐색기에서 마우스 올리면 정보가 보입니다.
+         사진 크기 460x460(단위:픽셀), 크기 11kb(용량)
+         디스플레이 모니터의 해상도 : 1920x1080(단위:픽셀)
+         이미지 표시 태그 : img, 이미지 파일 지정 속성 : src (url 또는 상대 경로 파일로 지정)
+        -->
+
+    <img src="../images/chrome.jfif" alt="chrome">     
+    <!-- 이미지의 크기 설정 방법 1) width, height 속성으로 합니다.(픽셀 또는 백분율)
+         alt 속성은 여러가지 원인의 오류로 이미지 안될 때 표시될 텍스트입니다.-->
+    <img src="../images/chrome.jfif" alt="chrome" width="100">     
+    <img src="../images/chrome.jfif" alt="chrome" width="50%">  <!--브라우저 윈도우 크기의 50%--> 
+    <hr>  
+    <!-- a 태그 안에 img 태그 넣기 -->
+    아래를 클릭해보세요. ↓ <br><!--마우스 올리면 마우스 포인터가 변경됩니다-->
+    <a href="https://www.google.com" target="_blank"><img src="../images/chrome.jfif"></a>
+    <hr>
+    <!-- 이미지의 크기 설정 방법 2) style 속성으로 합니다.
+         style 속성에는 여러가지 디자인 요소의 설정 값을 모두 줄 수 있습니다.(;로 구분)-->
+    <img src="../images/sb.jpg" style="width: 30%;">
+    <img src="../images/sb.jpg" style="width: 200px; height: 130px;">
+
+</body>
+</html>
