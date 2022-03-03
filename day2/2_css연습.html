@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day2_CSS연습</title>
+    <style> /*CSS 주석입니다*/
+        /* 1) 태그를 선택자로 할 때입니다.*/
+        h4{                               /*모든 h4 태그의 스타일 변경*/
+            color:cadetblue;
+        }
+        p{                               /*모든 p 태그의 스타일 변경*/
+            color: brown;
+            text-align: center;          /*가운데 정렬*/
+            font-size: 0.7em;            /*기본 크기의 70%*/
+        }
+        /* 2) id 속성값으로 선택합니다. 기호 # 사용*/
+        #para1{                         /* id속성값이 para1인 태그에 적용됩니다. para1은 식별자 */
+            background-color: azure;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        /* 3) class 속성값으로 선택합니다. 기호 . 사용
+              id(단일 요소 구별)와 class(여러개 요소 지정) 속성값은 태그 요소를 구별하기 위한 목적으로 사용합니다.*/
+        .content1{
+            background-color: black;
+            color:aliceblue;
+            font-weight: bold;
+        }
+        .content2{
+            font-size: 1.0em;
+            text-align: left;
+
+        }
+        /* 5) span 태그 중 class 속성값이 mark인 태그에만 적용합니다.*/
+        span.mark{ 
+            color: red;
+            font-weight: bold;
+        }
+        /* 태그 또는 클래스만 사용하는 선택자는 선택요소가 많아질 수 있습니다.
+            세부적인 css 적용을 할 때는 태그이름 클래스이름 형식으로 선택자를 사용할 필요가 있습니다. */
+        
+        /* 테두리, 여백 관련 속성 연습*/
+        ul{
+            border-top-style: dotted;
+            border-right: double;
+            border-bottom: solid;
+            border-left: dashed;    
+            /* 시계 방향으로 한번에 설정 가능합니다.: style(선모양), 색상, 굵기에 대해 모두 가능합니다. */
+            border-color: blue green red yellow;
+            /* border-방향-프로퍼티 */
+            border-top-width: 1px;
+            border-bottom-width: 3px;
+            border-left-width: 5px;
+            border-right-width: 2px;
+            border: 1px solid tomato; /* 4방향에 동일한 값이 적용(순서: 굵기, 모양, 색상)*/
+        }
+        ul{ /* 테두리와 내부 컨텐츠 사이의 여백 : padding */
+            /* padding-top: 20px;
+            padding-bottom: 30px;
+            padding-right: 50px; */
+            padding: 20px 50px 30px 60px;    /*시계 방향으로 한 번에 설정합니다.*/
+            /* 일반적으로 내부 여백은 4방향이 모두 동일 또는 위/아래 왼쪽/오른쪽 분류해서 설정합니다. */
+            padding: 10px;          /* 4방향 모두 10px*/
+            padding: 10px 40px;     /* 위/아래 10px, 왼쪽/오른쪽 40px*/
+        }
+        ul{ /* 블록 요소 태그 사이의 여백(외부 여백) : margin */ 
+            margin-top: 30px;
+            margin-bottom: 60px;
+            margin-left: 100px;
+            margin-right: 120px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id ="para1">CSS는 HTML 문서의 스타일을 지정하는데 사용하는 언어입니다. 
+       CSS는 HTML 요소가 어떻게 표시되어야 하는지 설명합니다.
+    </p>
+    <h4>CSS란</h4>
+    <ul>
+        <li>CSS는 Cascading Style Sheets의 약자입니다.</li>
+        <li>CSS는 한 번에 여러 웹 페이지(html 파일)에 적용될 수 있습니다.</li>
+        <li>확장자 CSS는 별도로 외부 파일에 CSS를 작성할 때 사용합니다.</li>
+        <li>CSS 작성은 style 태그 사용합니다. 특정 요소에 적용할 <span class ="mark">선택자(selector)</span>가 필요합니다.</li>
+        <li>CSS 프로퍼티는 글꼴의 크기, 색상, 배경이미지, 테두리 특성 등등이 있습니다. 모든 태그에 공통적인 것
+            또는 특정 태그에만 적용되는 것을 구별해서 사용합니다.
+        </li>
+    </ul>
+    <p>
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+    </p>
+    <p class="content1">    <!--p태그 셀렉터로 정의된 css 적용되나요? 태그와 클래스 둘다 적용. 그리고 충돌되는 것은  class 정의로 합니다.-->
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+    </p>
+    <!-- 4) 정의된 css를 다수 적용할 수 있습니다. 클래스들은 서로 충돌 x -->
+    <p class="content1 content2">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+    </p>
+    <!-- width를 100%가 아닌 너비 설정했을 때 margin:auto; 테스트 - 가로방향으로 중앙에 배치되도록 margin 설정 -->
+    <p style="width: 600px;border: 1px solid brown;margin: 30px auto;">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilis at vero eros et accumsan et iusto odio dignissim qui blandit de praesent duislenitloreaugue.
+    </p>
+</body>
+</html>

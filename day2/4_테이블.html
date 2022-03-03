@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day2_Table(표)</title>
+    <style>
+        th{
+            background-color: brown;
+            color: white;
+        }
+        th,td{     /* 셀렉터로 여러 개의 태그를 지정 */
+            padding: 10px;  /*칸 높이 주기*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 표를 만들어 주는 table 태그
+            :표의 제목 행 : th 태그
+            :행(row) tr 태그
+            :컬럼 td 태그 
+        
+        -->
+     <table style="width: 70%;margin: auto;">
+         <tr>   <!-- 첫 번째 행: 제목행(가운데 정렬)-->
+             <th style="width:20%">회원번호</th>    <!-- 4개의 칸(열) -->
+             <th style="width:20%">이름</th>
+             <th style="width:30%">연락처</th>
+             <th>주소</th>
+         </tr>
+         <tr>
+             <td>1</td>
+             <td>홍길동</td>
+             <td>010-1111-2222</td>
+             <td>서울시 강남구 역삼동</td>
+         </tr>
+         <tr>
+             <td>2</td>
+             <td>김모모</td>
+             <td>010-3333-4444</td>
+             <td>서울시 종로구</td>
+         </tr>
+
+        <tr>
+            <td>3</td>
+            <td>최나나</td>
+            <td>010-5555-6666</td>
+            <td>경기도 성남시 분당구</td>
+        </tr>
+     </table>    
+</body>
+</html>
