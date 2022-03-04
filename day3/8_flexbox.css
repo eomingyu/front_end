@@ -1,0 +1,55 @@
+html,body{
+    /* padding: 0px;
+    margin-top: -20px;
+    margin-left: 0px; */
+    width: 100%;
+}
+body{
+    line-height: 1;
+}
+.container{
+    background-color: brown;
+    width: 100%;
+    padding: 12px 15px;
+    top:0;
+    display: flex;  
+    /* flex-direction: row;  기본값 */
+    justify-content: center; /*가운데로 오게하기*/
+    
+}
+.container>li{  /* .container 클래스 요소의 자식 태그 li */
+    list-style: none;
+    padding: 8px 12px;
+    margin: 8px 12px;
+    font-size: 1.2em;
+}
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-top: -20px;
+    width: 100%;
+    z-index: 10;
+}
+main{
+    display:block;
+    position: relative;
+    width: 100%;
+    padding-top: 8rem;
+}
+a{
+    text-decoration: none; /*밑줄 없애기*/
+    color: white;
+}
+.container>li:hover{
+    background-color: coral;
+    border-radius: 4px;
+}
+@media screen and (max-width:768px) {
+    .container{
+        flex-direction: column;
+    }
+    .container>li{
+        text-align: center;
+    }    
+}

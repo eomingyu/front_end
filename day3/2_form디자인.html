@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- font awesome이라는 자바스크립트 라이브러리 활용하여 아이콘 사용을 할 수 있습니다.
+        아이콘을 이미지가 아닌 글꼴처럼 다를 수 있습니다. -->
+    <script src="https://kit.fontawesome.com/baebef7c60.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@200&display=swap');
+        *{
+            font-family: 'Hahmlet', serif;
+        }
+        table{
+            border-top: 2px solid gray;
+            border-bottom: 2px solid gray;
+        }
+        td{
+            padding: 10px;
+            /* border: 1px dashed black;  가이드선 */
+        }
+        input,select{
+            padding: 6px;
+            border-radius:4px;
+            border: 2px solid #ccc;
+        }
+
+        input[type=text],input[type=password],input[type=email]{
+            width: 70%;
+        }
+        input[type=number]{
+            width:20%;
+        }
+        label.title{
+            display: inline-block;
+            padding: 10px;
+            width: 70%;
+            background-color: #c69;
+            border-radius: 4px;
+            text-align: center;
+            color: white;
+        }
+         button{
+            color: white;
+            background-color: #c69;
+            border-radius:4px;
+            padding: 7px 15px;
+            margin: 7px;
+            border: none;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        /* 선택자 : 마우스가 놓여질 때 변경될 css */
+        button:hover{
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <div style="width:70%;margin: auto;"> <!--테이블을 포함하는 박스-->
+        <h2 style="text-align: center;">회원 등록 <i class="fa-solid fa-address-book"></i></h2>
+        <form action="">    
+            <table style="width:100%"> <!-- 부모태그 div 너비의 100% -->
+                <tr>
+                    <td><label for="name" class="title">이름</label></td>
+                    <td><input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="password" class="title">패스워드</label></td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="email" class="title">이메일</label></td>
+                    <td><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="age" class="title">나이</label></td>
+                    <td><input type="number" value="30" min="20" max="40" id="age" name="age"></td>
+                </tr>
+                <tr>
+                    <td><label for="addr" class="title">주소</label></td>
+                    <td>
+                        <select name="addr" id="addr">
+                            <option value="서울">서울</option>
+                            <option value="인천">인천</option>
+                            <option value="대전" selected="selected">대전</option> 
+                            <option value="광주">광주</option>
+                            <option value="부산">부산</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="" class="title">성별</label></td>
+                    <td>   
+                        <input type="radio" name="gender" checked="checked" id="male" value="male">
+                        <label for="">남자</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                        <label for="">여자</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="" class="title">취미</label></td>
+                    <td>
+                        <input type="checkbox" id="hobby1" name="hobby" value="축구">
+                        <label for="hobby1">축구</label>
+                        <input type="checkbox" id="hobby2" name="hobby" value="농구">
+                        <label for="hobby2">농구</label>
+                        <input type="checkbox" id="hobby3" name="hobby" value="스키">
+                        <label for="hobby3">스키</label>
+                        <input type="checkbox" id="hobby4" name="hobby" value="달리기">
+                        <label for="hobby4">달리기</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">    <!--이 칸의 정렬은 가운데 정렬-->
+                        <button type="submit">가입하기</button>
+                        <button type="reset">다시쓰기</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

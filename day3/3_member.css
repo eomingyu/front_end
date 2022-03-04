@@ -1,0 +1,43 @@
+table{
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+td{
+    padding: 10px;
+    /* border: 1px dashed black; 가이드선 */
+}
+input,select{
+    padding: 6px;
+    border-radius:4px;
+    border: 2px solid #ccc;
+}
+
+input[type=text],input[type=password],input[type=email]{
+    width: 70%;
+}
+input[type=number]{
+    width:20%;
+}
+label.title{
+    display: inline-block;
+    padding: 10px;
+    width: 70%;
+    background-color: #c69;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+}
+ button{
+    color: white;
+    background-color: #c69;
+    border-radius:4px;
+    padding: 7px 15px;
+    margin: 7px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+/* 선택자 : 마우스가 놓여질 때 변경될 css */
+button:hover{
+    background-color: darkmagenta;
+}

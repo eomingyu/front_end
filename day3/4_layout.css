@@ -1,0 +1,39 @@
+div.static {
+    position: static;               /* static : 문서의 흐름에 맞춰 배치 */
+    border: 3px solid #73AD21;
+  }
+div.relative1 {                      
+    position: relative;             /* relative : 위치값을 지정할 수 있음 */
+    left: 30px;                     /* 왼쪽에서 30px 떨어지게*/
+    border: 3px solid #73AD21;
+}
+
+div.fixed {         
+    position: fixed;                /* fixed : 브라우저 창을 기준으로 위치를 지정, 
+                                                스크롤하더라도 항상 같은 위치*/
+    bottom: 0;                      /*아래쪽 0 우측 0에 고정*/
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+}
+div.relative {
+    position: relative;             
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+  }
+div.absolute {
+    position: absolute;             /* absolute : relative값을 사용한 상위 요소를 기준으로 위치를 지정*/
+    top: 80px;                      /* 위쪽에서 80px 떨어지게*/
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;               /* 스크롤 내릴 경우 top 0에 고정*/
+    top: 0;
+    background-color: green;
+    border: 2px solid #4CAF50;
+}
