@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>환영합니다.! 자바스크립트</h3>
+    <hr>
+    <script>    /* 자바스크립트가 먼저 해석(번역)이 됩니다. 출력은 순차적인 흐름에 따라 됩니다.
+                    head 태그 안에 작성되면 먼저 출력됩니다. */
+        document.write('My name is 홍길동');
+        alert('나이를 알려주세요');     /* 알림메시지 출력 */
+    </script>
+    <button onclick="alert('지역을 알려주세요')">추가정보1</button>
+    <button onclick="your_info2()">추가정보2</button> <!-- 자바스크립트 함수 호출 -->
+    <button onclick="your_info3()">추가정보3</button> <!-- 자바스크립트 함수 호출 -->
+    <script>
+        function your_info2(){ /* your_info2 라는 함수를 정의합니다. */
+            var your_animal;    /* var은 변수 선언(데이터 타입을 지정하지 않고 저장되는 데이터로 결정됩니다.) */
+            your_animal=prompt('당신의 반려동물 이름은?');  /* 입력 대화상자 */
+            console.log(your_animal);   /* 오류 수정 등 디버깅을 위한 출력(f12키 누르고 콘솔에서 확인) */
+            var yn;
+            yn=confirm(your_animal+' 계속할까요?');
+            console.log(yn);
+            // document.write(your_animal);    /* 웹문서를 새롭게 작성합니다. */
+            document.getElementById('animal').innerHTML=your_animal; /*웹문서의 출력 내용을 변경합니다.*/
+            // id속성값으로 animal은 1개 요소만 지정되어야 합니다. 오류는 안나지만 처음 1개만 적용
+        }
+        function your_info3(){
+            var age;
+            age=prompt('당신의 나이는?');
+            var yn=confirm('출력할까요?');
+            if(yn==true){
+                document.getElementById('age').innerHTML=age;
+            }
+
+        }
+
+    </script>
+
+    <p>
+        입력하신 반려동물 이름은 <span id="animal">???</span> 입니다.<br>
+        당신의 나이는 <span id="age">???</span> 입니다.
+        <!-- 자바스크립트 javascript : 웹브라우저에서 실행되는 언어입니다.
+            컴파일(파일 단위로 번역)과정이 없고 명령을 하나씩 번역(인터프리터 언어)하는 형식(script)
+            199x 년도에 네스케이프 브라우저에서 개발 > 구글에서 발전시킴.(표준화,규격화)>많이 쓰이고 있음.
+            node.js 프로그램 : 웹브라우저 없이 자바스크립트를 실행할 수 있음.
+            기본형식 : 1) script 태그 안에서 작성   2) html 태그의 속성에서 작성(onclick 이벤트)
+                        ㄴ 위치는 상관없음. 별도 파일에도 작성함.
+            문법참고 : https://www.w3schools.com/js/default.asp
+            * 자바의 객체 개념. 자바의 객체에 포함된 메소드 또는 속성(전역변수)에 대한 개념이 동일하게 적용됩니다.
+            location.href는 location 객체의 href 속성입니다.
+        -->
+    </p>
+</body>
+</html>
