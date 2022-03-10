@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 버튼 클릭할 때마다 Math.random() 실행한 결과 출력하기 -->
+    <button onclick="myFunction1()">난수만들기</button>
+    <button onclick="myFunction2()">배열순서 무작위로 정렬</button>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <script>
+        function myFunction1(){
+            document.getElementById('demo').innerHTML=Math.random();
+            //0~1 사이의 임의 소수값으로 난수 발생.
+        }
+        function myFunction2(){
+            const points = [40, 100, 1, 5, 25, 10];
+            points.sort(function(a, b){return 0.5 - Math.random()});
+            document.getElementById("demo").innerHTML = points;    
+        }
+    </script>
+</body>
+</html>
