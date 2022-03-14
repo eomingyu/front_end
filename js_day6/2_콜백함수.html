@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- callback 함수 : 자바스크립트에서 많이 사용합니다.
+                함수 또는 메소드 안의 매개변수가 함수인 경우
+                그 매개변수로 쓰인 함수가 콜백함수입니다.
+            콜백함수가 사용되는 예제입니다.
+     -->
+
+     <!-- onclick 속성은 이벤트입니다. 아래 버튼을 클릭하면 func_btn1()함수가 실행돼요. -->
+     <button id="btn1" onclick="func_btn1()">클릭하세요[1]</button><br>
+     <!-- 이벤트 리스너 : 어떤 요소에 이벤트(예,'클릭') 발생할 때 실행할 함수입니다. 이를 등록하는 방법의 예시입니다 -->
+     <button id="btn2">클릭하세요[2]</button><br>
+     <button id="btn3">클릭하세요[3]</button><br>
+     <button id="btn4">클릭하세요[4]</button><br>
+     <div>현재시간 : <span id="now">현재 날짜와 시간표시가 됩니다.</span></div>
+
+     <script>
+         const func_btn1 = function(){
+             //알림 대화상자 사용 : alert
+             alert('첫번째 버튼을 클릭했군요.😀')       
+         };
+        //  btn2 버튼의 이벤트를 등록 : addEventListener 함수의 인자가 함수압니다.
+        //  *자바스크립트에서 많이 쓰이는 형식
+        document.getElementById('btn2').addEventListener('click',function(){   //콜백함수
+            let name =prompt('당신의 이름은?');
+            console.log(name+'~~')
+        }); //**두 번째 인자는 함수 식별자 또는 함수 리터럴. 여기서는 함수 리터럴**
+        const func_btn3=function(){
+            alert('세 번째 버튼을 클릭했군요🙂')
+        }
+        const func_btn4=function(x){
+            alert(x+'번째 버튼을 클릭했군요🙂')
+        }
+        document.getElementById('btn3').addEventListener('click',func_btn3);    //인자는 함수 식별자
+        //document.getElementById('btn3').addEventListener('click',func_btn4(3)); //즉시 호출.원하는 실행이 아닙니다.
+        //document.getElementById('btn4').addEventListener('click',()=>func_btn4(4)); //아래 콜백함수를 화살표 함수로 바꾼 것
+        document.getElementById('btn4').addEventListener('click',function(){
+            func_btn4(4);
+        });
+        //setInterval은 window 객체의 메소드 : 객체명을 생략.
+        setInterval(function(){
+            document.getElementById('now').innerHTML=Date();    //현재날짜시간 객체 생성하는 new Date(); new 생략가능
+        },1000); //두 번째 인자 1000ms(1초) 마다 첫 번째 인자의 콜백함수를 실행합니다.*
+
+     </script>
+</body>
+</html>

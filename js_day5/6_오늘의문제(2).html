@@ -40,13 +40,24 @@
                               {time:'12:30',todo:'점심식사'},
                               {time:'14:00',todo:'주간회의'},
                               {time:'16:45',todo:'자료조사'}]
-        
+        /*
         let _schedule =''
         schedule.forEach(function(val){
             _schedule+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`
         })
         document.getElementById('contents').innerHTML=_schedule
-                           
+        */
+       set_tbody();         //함수 호출: 함수 정의가 뒤에 있어도 호출에 오류가 없습니다.
+                        //  var, function은 자바스크립트가 선언부분을 맨 앞으로 올려요.(hoisting)
+        
+        //함수 사용2) 반복해서 사용된 코드(명령들)를 함수로 정의해서 재사용(함수 호출)          1) 이벤트 처리    
+        function set_tbody(){      //함수 이름은 식별자(프로그래머가 이해할 수 있는 단어로 만듭니다.)
+            let _schedule ='';
+            schedule.forEach(function(val){
+                _schedule+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`
+            })
+            document.getElementById('contents').innerHTML=_schedule;
+        }
         
         function add_schedule(){
             //prompt 이용해서 시간과 할일을 각각 입력받기
@@ -55,12 +66,14 @@
             //입력받은 내용으로 schedule 배열에 추가하기
             schedule.push({time:atime,todo:atodo})  //배열에 새로운 객체 항목을 추가
             //tbody 안에 원래 내용은 ''로 비우고 새로 변경된 배열로 tr태그를 넣어줍니다.
-            _schedule =''
+            /*
+            let _schedule =''
             schedule.forEach(function(val){
             _schedule+=`<tr><td>${val.time}</td><td>${val.todo}</td></tr>`
             })
             document.getElementById('contents').innerHTML=_schedule
-
+            */
+           set_tbody();         //함수 안에서 또 다른 함수 호출할 수 있습니다.
         }
     </script>
 </body>
