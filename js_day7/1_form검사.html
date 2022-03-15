@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="frmUser">
+        이름 : <input type="text" name="user"><br>              <!--element[0]-->
+        이메일 : <input type="text" name ="email"> <br>             <!--element[1]-->
+        <button type="submit">전송</button>
+        <button onclick="data_check()">데이터 확인</button>
+        <!-- ㄴ form 태그 입력요소 값들을 자바스크립트에서 확인하는 테스트-->
+        
+    </form>
+    <form id="momo">  <!-- forms[index?] -->
+        <!-- onclick 속성값으로 함수가 아니고 자바스크립트 명령어 1개 사용 가능합니다. -->
+        <input type="button" onclick="alert(document.forms[1].id);" value="momo's form" />   <!--  .forms[1].elements[0] -->
+    </form>
+    <form id="sana">  <!-- forms[index?] -->
+        <!-- onclick 속성값으로 함수가 아니고 자바스크립트 명령어 1개 사용 가능합니다. -->
+        <input type="button" onclick="alert(document.forms[2].elements[0].value);" value="sana's form" />   <!--  .forms[2].elements[0] -->
+    </form>
+
+    <script>
+        //form 태그 요소 가져오는 방법
+        //var selectForm = document.forms[index];       //form 태그 많을 때 순서가 index, 0부터 시작
+        //var selectFormElement = document.forms[index].elements[index];
+        //                  ㄴ elements[index]는 form 태그 내부의 입력 요소들의 순서가 index
+        //var selectFormElementValue = selectFormElement.value;     //value 속성이 입력 값입니다.
+        function data_check(){
+            console.log('1.form,elements 객체 이용해서 input 값 가져오기');
+            const $user = document.forms[0].elements[0];
+            const $email = document.forms[0].elements[1];
+            console.log('입력 user 이름 : '+ $user.value);
+            console.log('입력 email : '+ $email.value);
+            console.log('2.name 속성값을 이용해서 input 값 가져오기');
+            const $user2 = document.frmUser.user;
+            const $email2 = document.frmUser.email;
+            console.log('입력 user 이름2 : '+ $user2.value);
+            console.log('입력 email2 : '+ $email2.value);
+            if($user.value.length <= 0){            //length 프로퍼티 : 문자열의 길이
+                alert(`이름을 입력하세요. 필수입니다.(${$user.value.length})`);
+            }
+            console.log(`이름 길이 : ${$user.value.length}`);
+        }
+    </script>
+</body>
+</html>
