@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        div{
-            background-color: aquamarine;
-            font-size: 1.2em;
-            border: 1px solid black;
-        }
-        span{
-            background-color: tan;
-            font-size: 1.2em;
-            border: 1px solid black;
-        }
-            
-    </style>
+    <link rel="stylesheet" href="day3/4_layout.css">
 </head>
 <body>
-    <div>block</div><br>
-    <span>inline</span>
-    <span>inline</span>
-    <span>inline</span>
-    <span>inline</span>
-    <span>inline</span>
+    <h2>position</h2>
+
+<p>static : 문서의 흐름에 맞춰 배치 </p>
+<p>static : 문서의 흐름에 맞춰 배치 </p>
+<p>static : 문서의 흐름에 맞춰 배치 </p>
+<div class="sticky">position: sticky;</div>
+<br>
+<div class="relative">position: relative;
+  <div class="absolute">position: absolute;</div>
+</div>
+<div class="fixed">position: fixed;</div>
+<div style="padding-bottom:2000px">
+    <p>relative : 위치값을 지정할 수 있음</p>
+    <p>fixed : 브라우저 창을 기준으로 위치를 지정, 스크롤하더라도 항상 같은 위치</p>
+    <p>absolute : relative값을 사용한 상위 요소를 기준으로 위치를 지정</p>
+    <p>sticky (top:0): 스크롤 내릴 경우 top 0에 고정</p><br>
+
+  </div>
 
 </body>
 </html>

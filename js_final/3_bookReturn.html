@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day8_도서대여관리</title>
+    <link rel="stylesheet" href="5_hrdkorea.css">
+</head>
+<body>
+    <header>
+        <h3 class="header-item">도서대여관리 ver 1.0</h3>
+    </header>
+    <nav>
+            <ul class="container">
+                <li><a href="#">회원등록</a></li>
+                <li><a href="#">회원목록조회/수정</a></li>
+                <li><a href="#">도서목록조회/수정</a></li>
+                <li><a href="2_bookRent.html">도서대여</a></li>
+                <li><a href="3_bookReturn.html">도서반납</a></li>
+                <li><a href="1_home.html">홈으로</a></li>
+            </ul>
+    </nav>
+    <section>
+        <h4 style="text-align: center;">도서대여</h4>
+        <table>
+            <tr>
+                <th>대여NO</th>
+                <td><input type="text" name="rent_no"></td>
+            </tr>
+            <tr>
+                <th>회원번호</th>
+                <td><input type="text" name="mem_idx"></td>
+            </tr>
+            <tr>
+                <th>도서코드</th>
+                <td><input type="text" name="bcode" placeholder="도서코드 입력"><button type="button" >조회</button></td>
+            </tr>
+            <tr>
+                <th>대여일자</th>
+                <td><input type="date" name="rent_date"></td>
+            </tr>
+            <tr>
+                <th>반납일자</th>
+                <td><input type="date" name="exp_date"><button type="button" >반납</button></td>
+            </tr>
+        </table>
+    </section>
+    <footer>
+        HRDKOREA Copyright&copy;2022 All rights reserved. Human Resources Development Service of Korea
+    </footer>
+</body>
+</html>
