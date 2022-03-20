@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day8_도서대여관리</title>
+    <link rel="stylesheet" href="0_hrdkorea.css">
+</head>
+<body>
+    <div class="wrap_container">
+        <header>
+            <h3 class="header-item">도서대여관리 ver 1.0</h3>
+        </header>
+        <nav>
+                <ul class="container">
+                    <li><a href="4_memberReg.html">회원등록</a></li>
+                    <li><a href="5_memberList.html">회원목록조회/수정</a></li>
+                    <li><a href="6_bookReg.html">도서등록</a></li>
+                    <li><a href="7_bookList.html">도서목록조회/수정</a></li>
+                    <li><a href="2_bookRent.html">도서대여</a></li>
+                    <li><a href="3_bookReturn.html">도서반납</a></li>
+                    <li><a href="1_home.html">홈으로</a></li>
+                </ul>
+        </nav>
+        <section>
+            <h4 style="text-align: center;">회원등록</h4>
+            <form action="">
+                <table>
+                    <tr>
+                        <th>회원번호</th>
+                        <td><input type="text" name="mem_idx" placeholder="필수 입력"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" name="password" placeholder="6~10자리 입력"></td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" name="name" placeholder="필수 입력"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td><input type="text" name="email" placeholder="필수 입력"></td>
+                    </tr>
+                    <tr>
+                        <th>전화번호</th>
+                        <td><input type="text" name="phone"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="button" onclick="valid_check()">등록</button>
+                            <button type="reset">취소</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            
+        </section>
+        <footer>
+            HRDKOREA Copyright&copy;2022 All rights reserved. Human Resources Development Service of Korea
+        </footer>
+    </div>
+    <script>
+        const frm = document.forms[0];
+        const memIdx = frm.mem_idx;
+        const password = frm.password;
+        const name_ = frm.name;
+        const email_ = frm.email;
+        const phone = frm.phone;
+        function valid_check(){
+            const temp = email_.value;
+            if(memIdx.value==''){
+                alert('회원번호를 입력해주세요.')
+                memIdx.focus();
+            }else
+            if(password.value.length<6 || password.value.length>10){
+                alert('비밀번호는 6~10자리로 입력해주세요.')
+                password.focus();
+            }else
+            if(name_.value==''){
+                alert('이름을 입력해주세요.')
+                name_.focus();
+            }
+            else
+            if(!(temp.endsWith('.net') || temp.endsWith('.com')) 
+                || temp.indexOf('@') <= 0|| temp.indexOf('@') != temp.lastIndexOf('@')){
+                alert('이메일 형식이 잘못 되었습니다.')
+                email_.focus();
+            }else{
+                alert('회원 등록이 완료되었습니다.')
+            }
+
+        } 
+    </script>
+</body>
+</html>

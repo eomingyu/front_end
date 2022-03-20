@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item{
+            color: blueviolet;
+            font-weight: bold;
+        }
+        .item01{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h4>Dom test</h4>
+        <ul>
+            <li class="item item01">트와이스</li>
+            <li class="item">소녀시대</li>
+            <li>원더걸스</li>
+        </ul>
+        <ul>
+            <li>사나</li>
+            <li>나연</li>
+            <li>다현</li>
+            <li>정연</li>
+        </ul>
+    </div>
+    <script>
+        const main=document.getElementById('main')
+        console.log('1.childNodes')
+        console.log(main.childNodes)    //결과값 NodeList의 크기 : 7, 태그 앞뒤에 있는 엔터도 노드
+        console.log('2.children')
+        console.log(main.children)      //결과값 HTMLCollection의 크기 : 3, 실제 태그요소만 포함
+        console.log('3.firstChild')
+        console.log(main.firstChild)
+        console.log('4.firstElementChild')
+        console.log(main.firstElementChild)
+        console.log('5.lastChild')
+        console.log(main.lastChild)
+        console.log('6.lastElementChild')
+        console.log(main.lastElementChild)
+        
+        const child1 = main.firstElementChild;  //div 태그의 첫번째 자식 요소 저장
+        console.log('7.첫 번째 자식의 컨텐츠')
+        console.log(child1.innerHTML)
+        console.log('8.뒤에 나오는 형제요소')
+        console.log(child1.nextElementSibling)
+        console.log('9.8번의 컨텐츠')
+        console.log(child1.nextElementSibling.innerHTML)
+
+    </script>
+    <button onclick="new_list()">새로운 리스트 추가</button>
+    <button onclick="replace_list()">리스트 바꾸기</button>
+    <script>
+        function new_list(){
+            const list = '<li>스테이시</li><li>에스파</li><li>비비즈</li><li>??</li>' //엔터 사용하면 오류
+            const list2 = `<li>스테이시</li>
+                            <li>에스파</li>
+                            <li>비비즈</li>
+                            <li>??</li>`  //`` 안에서는 엔터 사용 가능
+            const new_ul = document.createElement('ul')     //<ul></ul>의 태그요소가 생성
+            new_ul.innerHTML=list;              //<ul></ul> 안에 들어갈 컨텐츠를 설정
+            main.appendChild(new_ul)            //div 태그의 자식으로 마지막에 추가
+            new_ul.className='item'         //첫 번째 스타일 item으로 적용
+            new_ul.classList.add('item01')  //다른 스타일 item01을 추가
+        }
+        function replace_list(){
+            const list = '<li>스테이시</li><li>에스파</li><li>비비즈</li><li>??</li>'
+            const new_ul = document.createElement('ul')
+            new_ul.innerHTML=list;
+            const old = main.children[1];
+            main.replaceChild(new_ul,old)   //old를 new로 대체합니다.
+            //main.replaceChild(new_ul,child1.nextElementSibling)
+        }
+    </script>
+</body>
+</html>

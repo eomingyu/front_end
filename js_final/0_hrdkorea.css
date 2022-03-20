@@ -3,22 +3,16 @@ html,body{
     margin-top:-20px;
     margin-left: 0px; */
     width: 100%;
-}
-body {
-   line-height: 1; 
+    height: 100%;
 }
 
-/* header,nav,section{
-    box-sizing: border-box;
-}
- */
 .header-item{
     background-color: #1775d1;
     color: white;
     box-sizing: border-box;   
     /* width,height 계산할 때 padding,border-width 포함시킵니다. */
-    height: 5rem;  /* 5rem의 내용물의 height와 padding,테두리굵기 포함. */
-    padding-top: 2rem;  
+    height: 10rem;  /* 5rem의 내용물의 height와 padding,테두리굵기 포함. */
+    padding-top: 4.5rem;  
     /* em: 상위태그의 크기에 대한 상대비율 ,rem : root html 에 대한 상대크기 
        em은 부모태그 상태에 따라 달라지는 값, rem 은 항상 html태그 기준이므로 상대적인 비율 계산이 단순
        1rem 은 html 태그의 기본 글꼴 크기(px),브라우저마다 차이가 있는데 대략 16~17px
@@ -26,11 +20,17 @@ body {
     margin-bottom: 0;
     text-align: center;
 }
+.wrap_container{
+    display:flex;
+    flex-direction: column;
+    height: 100%;           /* html,body,section의 height도 100%로 하세요 */
+}
+
 
 .container{
-    background-color: #004a9f;
+    background-color: #004a9f;  /* 16진수값 Red 2자리, Green 2자리, Blue 2자리*/
     width: 100%;
-    padding: 5px 8px;
+    padding: 12px 8px;
     top:0;
     display: flex;
     /* flex-direction: row; */
@@ -55,7 +55,8 @@ header{
     margin-left: -10px;
 }
 section {
-    height: 33rem;
+    /* height: 33rem; */
+    height: 100%;
 }
  footer {
      text-align: center;
@@ -96,13 +97,15 @@ th{
     padding: 7px;
     text-align: center;
 }
-input[type=text]{
+input[type=text],[type=password]{
     padding: 5px;
     width: 59%;
+    margin-left: 10px;
 }
 input[type=date]{
     padding: 2px;
     width: 60%;
+    margin-left: 10px;
     
 }
 button{

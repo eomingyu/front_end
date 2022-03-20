@@ -44,16 +44,16 @@ const month = today2.getMonth()+1;
 const date_ = today2.getDate();
 console.log(year.toString()+month.toString().padStart(2,0)+date_.toString().padStart(2,0));
 //20220317
-const month2 = (today.getMonth()+1).toString().padStart(2,0);
-const date2 = today.getDate().toString().padStart(2,0);
+const month2 = (today2.getMonth()+1).toString().padStart(2,0);
+const date2 = today2.getDate().toString().padStart(2,0);
 //*필요한 값으로 배열을 만들고 join메소드로 연결시켜 문자열을 생성합니다.(연결기호는 없으므로 '')
-console.log([year,month2,date2].join(''));      //20220401
-console.log([year,month2,date2].join('-'));     //2022-04-01
+console.log([year,month2,date2].join(''));      //20220317
+console.log([year,month2,date2].join('-'));     //2022-03-17
 //기억하기 : 배열 -> 문자열 : join, 문자열 -> 배열 : split
 
 console.log(new Date('2022-03-03'));            //Thu Mar 03 2022 09:00:00 GMT+0900
 console.log(new Date('2022-03-03')-new Date('2022-03-02')); //결과는 timestamp 값 : 86400000
 let diff = new Date('2022-03-03')-new Date('2022-03-02');
 const oneday_timestamp = 1*24*60*60*1000;
-console.log(oneday_timestamp);                   //86400000
-console.log(diff/oneday_timestamp);               //1
+console.log(oneday_timestamp);                 //86400000
+console.log(diff/oneday_timestamp);           //1

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day8_도서대여관리</title>
+    <link rel="stylesheet" href="0_hrdkorea.css">
+</head>
+<body>
+    <div class="wrap_container">
+        <header>
+            <h3 class="header-item">도서대여관리 ver 1.0</h3>
+        </header>
+        <nav>
+                <ul class="container">
+                    <li><a href="4_memberReg.html">회원등록</a></li>
+                    <li><a href="5_memberList.html">회원목록조회/수정</a></li>
+                    <li><a href="6_bookReg.html">도서등록</a></li>
+                    <li><a href="7_bookList.html">도서목록조회/수정</a></li>
+                    <li><a href="2_bookRent.html">도서대여</a></li>
+                    <li><a href="3_bookReturn.html">도서반납</a></li>
+                    <li><a href="1_home.html">홈으로</a></li>
+                </ul>
+        </nav>
+        <section>
+            <h4 style="text-align: center;">도서등록</h4>
+            <form action="">
+                <table>
+                    <tr>
+                        <th>도서코드</th>
+                        <td><input type="text" name="bcode"></td>
+                    </tr>
+                    <tr>
+                        <th>책이름</th>
+                        <td><input type="text" name="title"></td>
+                    </tr>
+                    <tr>
+                        <th>저자</th>
+                        <td><input type="text" name="writer"></td>
+                    </tr>
+                    <tr>
+                        <th>출판사</th>
+                        <td><input type="text" name="publisher"></td>
+                    </tr>
+                    <tr>
+                        <th>출판일자</th>
+                        <td><input type="date" name="pdate"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="button" onclick="valid_check()">등록</button>
+                            <button type="reset">취소</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            
+        </section>
+        <footer>
+            HRDKOREA Copyright&copy;2022 All rights reserved. Human Resources Development Service of Korea
+        </footer>
+    </div>
+    <script>
+
+    </script>
+</body>
+</html>

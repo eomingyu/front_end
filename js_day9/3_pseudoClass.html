@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <style>
+      table,tr,th,td {
+        border: 1px solid #ccc;
+        text-align: center;
+        border-collapse: collapse;
+        padding: 8px;
+      }
+      #toggle {
+        display: none;          /* 화면 표시 안합니다. */
+      }
+      .expandable {
+        visibility: collapse;   /* 숨기기(hidden과 유사) */
+        background: #1c87c9;
+      }
+      #btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      #toggle:checked ~ * .expandable {   /*~ 선택자1 뒤 선택자2 모든 일치하는 형제 요소들*/
+        visibility: visible;              /* #toggle이 선택되었을 때 그 뒤의 .expendable 클래스 요소*/
+      }
+      #toggle:checked ~ #btn {            /* #toggle이 선택되었을 때 그 뒤의 .expendable 클래스 요소*/
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- pseudo class :예시  a:hover 와 같이 :기호와 함께 사용되는 것-->
+    <h2>:checked(가상클래스) selector example</h2>
+    <input type="checkbox" id="toggle" />
+    <table>
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="expandable">
+          <td>[more text]</td>
+          <td>[more text]</td>
+          <td>[more text]</td>
+        </tr>
+        <tr>
+          <td>[text]</td>
+          <td>[text]</td>
+          <td>[text]</td>
+        </tr>
+        <tr class="expandable">
+          <td>[more text]</td>
+          <td>[more text]</td>
+          <td>[more text]</td>
+        </tr>
+        <tr>
+          <td>[text]</td>
+          <td>[text]</td>
+          <td>[text]</td>
+        </tr>
+        <tr class="expandable">
+          <td>[more text]</td>
+          <td>[more text]</td>
+          <td>[more text]</td>
+        </tr>
+      </tbody>
+    </table>
+    <label for="toggle" id="btn">Click here!</label>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- window 객체는 사용 중인 브라우저를 나타낸다.
+         window 객체에는 console,document,history, location,navigator 등의 프로퍼티를 갖는다.
+          alert(),confirm(),prompt () 는 window 객체의 메소드입니다.
+    -->
+        <h4>window 객체</h4>
+        <p>window 객체에는 console,document,history, location,navigator 등의 프로퍼티를 갖는다.
+            alert(),confirm(),prompt () 는 window 객체의 메소드입니다.
+            자바스크립트 코드 작성시 window는 생략하고 씁니다.<br>
+            <a href="">a태그</a>        <!--a태그의 속성값으로 url 변경-->
+            <!-- button 태그는 location 객체를 이용하여 url 변경 -->
+            <button onclick="location.href='../js_final/1_home.html'">도서HOME</button>
+            <button onclick="location.href='https://google.com'">구글</button>
+            <button onclick="history.back()">뒤로이동</button>
+            <button onclick="history.forward()">앞으로이동</button>
+        </p>
+        <script>
+            console.log(window.document)
+            console.log(document)               //현재 브라우저의 HTML문서 정보
+            console.log(window.location)        //현재 브라우저 창의 url 정보
+            console.log(window.history)         //현재 브라우저 창에서 방문한 기록
+            console.log(window.navigator)       //사용하고 있는 브라우저 정보
+        </script>
+        <!-- DOM :HTML문서가 웹브라우저에  로드되면 document 객체가 생성된다.
+        document 객체가 최상위 root node가 되고 그 자식 노드는 html태그이고
+        또 그 자식이 head , body 태그가 된다.
+        document 객체는 window 객체의 프로퍼티도 된다. (window.document 또는 document 로 표기)
+        -->
+        <h4>DOM</h4>
+        <div style="padding: 10px;width:70%;margin: auto;background-color: antiquewhite;">
+            <ul>
+                <li>
+                    HTML 요소는 HTML 문서를 구성하며 렌더링과정에서 DOM을 구성하는 노드 객체로 변환된다.
+                    노드는 계층구조에 포함되는 구성원을 말한다
+                </li>
+                <li>
+                    HTML 요소의 구조 : &lt;시작태그 애트리뷰트이름="애트리뷰트값"&gt;컨텐츠&lt;/종료태그&gt; 는
+                    각각 애트리뷰트 노드, 텍스트컨텐츠 노드로 변환된다.
+                </li>
+                <li>
+                    컨텐츠가 태그일 때, 요소들은 중첩되며 이로 인해 계층구조가 형성되어 parent-child 관계가 형성된다.
+                    HTML 요소들이 객체화된 모든 노드들이 트리자료구조를 생성한다.
+                </li>
+                <li>
+                    document 노드 : document 객체로 하나의 HTML 문서 전체를 가리키고 window 객체의 document 프로퍼티이기도 하다.
+                    HTML 문서당 한개만 존재하며 루트 노드이고 다른 노드에 접근하기 위한 진입점이다.
+                </li>
+                <li>
+                    element 노드 : HTML 요소를 가리키는 객체이다. 문서의 구조를 표현한다.(태그)
+                </li>
+                <li>
+                    attribute 노드 : HTML 요소의 애트리뷰트를 가리킨다. 요소노드와는 단순한 연결로 구성된다.(단순한 참조값. 부모 자식관계로 참고하지 않는다.)
+                </li>
+                <li>
+                    text 노드 : HTML 요소의 텍스트 컨텐츠를 가리킨다. 문서의 정보를 표현한다.요소 노드의 자식 노드이다.
+                </li>
+                <li>
+                    **DOM 을 통해 노드 객체의 부모,형제, 자식을 탐색할 수 있고 HTML의 구조와 내용 , 스타일을 동적으로 조작할 수 있다.
+                </li>
+            </ul>
+        </div>
+
+
+
+
+</body>
+</html>

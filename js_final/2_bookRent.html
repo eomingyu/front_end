@@ -5,79 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day8_도서대여관리</title>
-    <link rel="stylesheet" href="5_hrdkorea.css">
+    <link rel="stylesheet" href="0_hrdkorea.css">
 </head>
 <body>
-    <header>
-        <h3 class="header-item">도서대여관리 ver 1.0</h3>
-    </header>
-    <nav>
+    <div class="wrap_container">
+        <header>
+            <h3 class="header-item">도서대여관리 ver 1.0</h3>
+        </header>
+        <nav>
             <ul class="container">
-                <li><a href="#">회원등록</a></li>
-                <li><a href="#">회원목록조회/수정</a></li>
-                <li><a href="#">도서목록조회/수정</a></li>
+                <li><a href="4_memberReg.html">회원등록</a></li>
+                <li><a href="5_memberList.html">회원목록조회/수정</a></li>
+                <li><a href="6_bookReg.html">도서등록</a></li>
+                <li><a href="7_bookList.html">도서목록조회/수정</a></li>
                 <li><a href="2_bookRent.html">도서대여</a></li>
                 <li><a href="3_bookReturn.html">도서반납</a></li>
                 <li><a href="1_home.html">홈으로</a></li>
             </ul>
-    </nav>
-    <section>
-        <h4 style="text-align: center;">도서대여</h4>
-        <table>
-            <tr>
-                <th>대여NO</th>
-                <td><input type="text" name="rent_no" placeholder="자동생성"></td>
-            </tr>
-            <tr>
-                <th>회원번호</th>
-                <td><input type="text" name="mem_idx" placeholder="회원번호 입력"></td>
-            </tr>
-            <tr>
-                <th>도서코드</th>
-                <td><input type="text" name="bcode" placeholder="도서코드 입력"></td>
-            </tr>
-            <tr>
-                <th>대여일자</th>
-                <td><input type="date" name="rent_date"><button onclick="valid_check()" type="button" >대여</button></td>
-            </tr>
-            <tr>
-                <th>반납예정일자</th>
-                <td><input type="date" name="exp_date"></td>
-            </tr>
-        </table>
-    </section>
-    <footer>
-        HRDKOREA Copyright&copy;2022 All rights reserved. Human Resources Development Service of Korea
-    </footer>
-    <script>
-        const frm = document.forms[0];
-        const rentNo = frm.rent_no;     
-        const memIdx = frm.mem_idx;
-        const bcode_ = frm.bcode;
-        const rentDate = frm.rent_date;      
-        const expDate = frm.exp_date;      
-        const today = new Date();
-        const year = today.getFullYear();
-        const month = (today.getMonth()+1).toString().padStart(2,0);
-        const date = today.getDate().toString().padStart(2,0);
-        rentDate.value = [year,month,date].join('-');
-        alert(today)
-        function valid_check(){
-            let isValid = true;
-
-            if(memIdx.value == ""){
-                alert('회원번호 입력은 필수입니다.')
-                memIdx.focus();          
-                isValid = false;
-            } else
-            if(bcode_.value == ""){
-                alert('책코드번호 입력은 필수입니다.')
-                bcode_.focus();          
-                isValid = false;
-            }
-            
-
-        }
-    </script>
+        </nav>
+        <section>
+            <h4 style="text-align: center;">도서대여</h4>
+            <form action="">
+                <table>
+                    <tr>
+                        <th>대여NO</th>
+                        <td><input type="text" name="rent_no" placeholder="자동생성"></td>
+                    </tr>
+                    <tr>
+                        <th>회원번호</th>
+                        <td><input type="text" name="mem_idx" placeholder="회원번호 입력"></td>
+                    </tr>
+                    <tr>
+                        <th>도서코드</th>
+                        <td><input type="text" name="bcode" placeholder="도서코드 입력"></td>
+                    </tr>
+                    <tr>
+                        <th>대여일자</th>
+                        <td><input type="date" name="rent_date" ><button onclick="valid_check()" type="button" >대여</button></td>
+                    </tr>
+                    <tr>
+                        <th>반납예정일자</th>
+                        <td><input type="date" name="exp_date"></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+        <footer>
+            HRDKOREA Copyright&copy;2022 All rights reserved. Human Resources Development Service of Korea
+        </footer>
+        <script src="bookRent.js"></script>
+    </div>
 </body>
 </html>
